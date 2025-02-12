@@ -17,7 +17,14 @@ graph TB
     Redis[(Redis Cache)]
     Meilisearch[(Meilisearch)]
     
-    %% Agents
+    %% Specialized Agents Layer
+    BlogGeneratorAgent[Blog Generator<br/>Agent]
+    AssistantAgent[Assistant Agent]
+    DocumentProcessor[Document<br/>Processor Agent]
+    AgentSantePublic[Agent Santé<br/>Public]
+    PDFAgent[PDF Agent]
+    
+    %% Search Orchestrator & Agents
     SearchOrchestrator{Search<br/>Orchestrator}
     SearchAgent[Search Agent]
     RelevanceAgent[Relevance Agent]
@@ -39,8 +46,19 @@ graph TB
     Frontend --> Supabase
     Frontend --> Stripe
     
-    %% Backend Flow
-    API --> SearchOrchestrator
+    %% Backend Flow - CORRECTED
+    API --> BlogGeneratorAgent
+    API --> AssistantAgent
+    API --> DocumentProcessor
+    API --> AgentSantePublic
+    API --> PDFAgent
+    BlogGeneratorAgent --> SearchOrchestrator
+    AssistantAgent --> SearchOrchestrator
+    DocumentProcessor --> SearchOrchestrator
+    AgentSantePublic --> SearchOrchestrator
+    PDFAgent --> SearchOrchestrator
+    
+    %% Search Orchestrator Flow
     SearchOrchestrator --> |Coordinates| SearchAgent
     SearchOrchestrator --> |Coordinates| RelevanceAgent
     SearchOrchestrator --> |Coordinates| RefinementAgent
