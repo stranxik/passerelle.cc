@@ -246,15 +246,15 @@ Passerelle.cc propose des outils d'analyse stratégique puissants pour optimiser
     </td>
   </tr>
   <tr>
-    <td style="background: none; text-align: left;">
+    <td style="background-color: black !important; text-align: left;">
       <img src="https://github.com/stranxik/passerelle.cc/raw/main/img/documentation/catalogue.png" alt="Optimisation Catalogue" width="100%">
       <h3 style="text-align: left;">Optimisation Catalogue</h3>
       <h4 style="text-align: left;">Optimisez votre Catalogue</h4>
-      <p style="color: black;">Identifiez les opportunités et optimisez votre offre de formation grâce à nos analyses de données.</p>
-      <ul style="color: black;">
-        <li style="color: black;"><strong>Gaps d'Offre</strong> - Identifiez les opportunités de marché non exploitées dans votre secteur.</li>
-        <li style="color: black;"><strong>Benchmark Prix</strong> - Comparez vos tarifs avec le marché et optimisez votre positionnement.</li>
-        <li style="color: black;"><strong>Certification</strong> - Alignez vos formations avec les exigences RNCP et Qualiopi.</li>
+      <p>Identifiez les opportunités et optimisez votre offre de formation grâce à nos analyses de données.</p>
+      <ul>
+        <li><strong>Gaps d'Offre</strong> - Identifiez les opportunités de marché non exploitées dans votre secteur.</li>
+        <li><strong>Benchmark Prix</strong> - Comparez vos tarifs avec le marché et optimisez votre positionnement.</li>
+        <li><strong>Certification</strong> - Alignez vos formations avec les exigences RNCP et Qualiopi.</li>
       </ul>
     </td>
   </tr>
@@ -784,8 +784,17 @@ Je recherche activement des partenaires visionnaires pour co-créer l'avenir de 
 - Accès à mon écosystème technologique
 - Développement de solutions verticales sur mesure
 
+## 📇 Contact et Profil
+
+Pour en savoir plus sur mon parcours, mes projets et mes compétences, consultez ma carte professionnelle :
+
+<div align="center">
+  <a href="https://dub.sh/i3eMsFA" target="_blank">
+    <img src="https://img.shields.io/badge/CV_et_Projets-Thibault_Souris-0A66C2?style=for-the-badge&logo=notion&logoColor=white" alt="Carte Professionnelle" />
+  </a>
+</div>
+
 ---
 
 *Thibault Souris*  
-Fondateur de Moveto Studio  
 [Flowz.cc](https://flowz.cc/) | [LinkedIn](https://www.linkedin.com/in/thibault-souris/)
