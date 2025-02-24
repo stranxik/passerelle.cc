@@ -10,11 +10,13 @@
   - [Solutions](#solutions)
   - [Innovation](#innovation-)
   - [Extensibilité](#extensibilité)
+- [Passerelle.cc - Analyses Stratégiques pour la Formation](#-passerellecc---analyses-stratégiques-pour-la-formation)
 - [Plateforme Passerelle.cc](#-plateforme-passerellecc)
   - [Architecture](#architecture)
   - [Composants Principaux](#composants-principaux)
   - [Système RAG Dual](#-système-rag-dual)
   - [Système de Double Bucket](#-système-de-double-bucket-pour-les-embeddings)
+- [Fonctionnalités de Passerelle.cc](#-fonctionnalités-de-passerellecc)
 - [Architecture Technique Détaillée](#-architecture-technique-détaillée)
 - [Partenariats](#-partenariats)
 
@@ -224,6 +226,52 @@ Cette architecture me permet de :
 - Configurer des index dédiés
 - Personnaliser les workflows
 - Adapter les modèles LLM
+
+## 📊 Passerelle.cc - Analyses Stratégiques pour la Formation
+
+Passerelle.cc propose des outils d'analyse stratégique puissants pour optimiser votre activité de formation professionnelle :
+
+<table width="100%">
+  <tr>
+    <td style="background: none; text-align: left;">
+      <img src="https://github.com/stranxik/passerelle.cc/raw/main/img/documentation/positionnement.png" alt="Analyse de Marché" width="100%">
+      <h3 style="text-align: left;">Analyse de Marché</h3>
+      <h4 style="text-align: left;">Optimisez votre Positionnement</h4>
+      <p>Accédez à des analyses détaillées de votre marché et prenez des décisions éclairées basées sur des données en temps réel.</p>
+      <ul>
+        <li><strong>Analyse Concurrentielle</strong> - Identifiez et analysez vos concurrents directs, leurs performances et leur positionnement.</li>
+        <li><strong>Taux d'Emploi</strong> - Suivez les taux d'insertion et les salaires moyens par formation et par région.</li>
+        <li><strong>Tendances Marché</strong> - Anticipez les évolutions du marché grâce à l'analyse des tendances en temps réel.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="background: none; text-align: left;">
+      <img src="https://github.com/stranxik/passerelle.cc/raw/main/img/documentation/catalogue.png" alt="Optimisation Catalogue" width="100%">
+      <h3 style="text-align: left;">Optimisation Catalogue</h3>
+      <h4 style="text-align: left;">Optimisez votre Catalogue</h4>
+      <p style="color: black;">Identifiez les opportunités et optimisez votre offre de formation grâce à nos analyses de données.</p>
+      <ul style="color: black;">
+        <li style="color: black;"><strong>Gaps d'Offre</strong> - Identifiez les opportunités de marché non exploitées dans votre secteur.</li>
+        <li style="color: black;"><strong>Benchmark Prix</strong> - Comparez vos tarifs avec le marché et optimisez votre positionnement.</li>
+        <li style="color: black;"><strong>Certification</strong> - Alignez vos formations avec les exigences RNCP et Qualiopi.</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td style="background: none; text-align: left;">
+      <img src="https://github.com/stranxik/passerelle.cc/raw/main/img/documentation/opportunités.png" alt="Analyse Territoriale" width="100%">
+      <h3 style="text-align: left;">Analyse Territoriale</h3>
+      <h4 style="text-align: left;">Cartographiez vos Opportunités</h4>
+      <p>Visualisez et analysez les opportunités de développement par territoire.</p>
+      <ul>
+        <li><strong>Zones Blanches</strong> - Identifiez les territoires sous-exploités pour votre développement.</li>
+        <li><strong>Besoins Locaux</strong> - Analysez les besoins spécifiques de chaque région.</li>
+        <li><strong>Concurrence</strong> - Cartographiez vos concurrents et leurs zones d'influence.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ## 📊 Plateforme Passerelle.cc
 
@@ -498,6 +546,66 @@ graph TB
 
 Ce système est utilisé à la fois pour les embeddings dans Meilisearch (RAG global) et pour les embeddings des documents utilisateurs dans Supabase (RAG utilisateur), garantissant une cohérence et une efficacité optimales dans toute l'architecture.
 
+## 💻 Fonctionnalités de Passerelle.cc
+
+Passerelle.cc offre une interface utilisateur intuitive et puissante, spécialement conçue pour le secteur de la formation professionnelle. Voici les principales fonctionnalités de la plateforme :
+
+### 1. Dashboard Personnalisé
+
+![Dashboard Passerelle.cc](https://github.com/stranxik/passerelle.cc/raw/main/img/saas/dashboard.png)
+
+Le dashboard offre une vue d'ensemble complète et personnalisable :
+- Statistiques d'utilisation en temps réel
+- Accès rapide aux dernières recherches
+- Widgets configurables selon les besoins de l'utilisateur
+- Indicateurs de performance des formations
+
+### 2. Assistant IA Contextuel
+
+![Assistant IA](https://github.com/stranxik/passerelle.cc/raw/main/img/saas/assistant.png)
+
+L'assistant IA est le cœur de l'expérience utilisateur :
+- Interface conversationnelle intuitive
+- Réponses enrichies par le RAG dual (sectoriel + documents utilisateur)
+- Suggestions intelligentes basées sur le contexte
+- Historique des conversations avec possibilité de reprise
+- Génération de contenus formatés (tableaux, listes, etc.)
+
+### 3. Fiches France Compétences
+
+![Fiches France Compétences](https://github.com/stranxik/passerelle.cc/raw/main/img/saas/fiches.png)
+
+Un accès optimisé aux référentiels officiels :
+- Consultation simplifiée des fiches RNCP
+- Recherche avancée par compétences, métiers ou secteurs
+- Mise en relation automatique avec les formations disponibles
+- Analyse comparative des référentiels
+- Exportation des fiches au format PDF
+
+### 4. Vault IA (Gestion Documentaire)
+
+![Vault IA](https://github.com/stranxik/passerelle.cc/raw/main/img/saas/vault-ia.png)
+
+Le système de gestion documentaire intelligent :
+- Upload sécurisé de documents (PDF, Word, Excel, etc.)
+- Traitement automatique et extraction des informations clés
+- Organisation intelligente par catégories
+- Recherche sémantique dans les documents personnels
+- Intégration transparente avec l'assistant IA
+
+### 5. Personnalisation Avancée
+
+![Personnalisation](https://github.com/stranxik/passerelle.cc/raw/main/img/saas/personnalisation.png)
+
+Des options de personnalisation étendues :
+- Configuration des sources de données prioritaires
+- Paramétrage des agents spécialisés selon les besoins
+- Personnalisation des prompts et du comportement de l'IA
+- Gestion des préférences d'affichage et d'interaction
+- Intégration avec les outils métiers existants
+
+Ces fonctionnalités s'appuient sur l'architecture technique décrite précédemment, offrant une expérience utilisateur fluide et performante, spécifiquement adaptée aux besoins du secteur de la formation professionnelle.
+
 ## 🚀 Architecture Technique Détaillée
 
 ```mermaid
@@ -680,4 +788,4 @@ Je recherche activement des partenaires visionnaires pour co-créer l'avenir de 
 
 *Thibault Souris*  
 Fondateur de Moveto Studio  
-[Flowz.cc](https://flowz.cc/) | [LinkedIn](https://www.linkedin.com/in/thibaultsouris/)
+[Flowz.cc](https://flowz.cc/) | [LinkedIn](https://www.linkedin.com/in/thibault-souris/)
