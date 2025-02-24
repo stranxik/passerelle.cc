@@ -1,8 +1,26 @@
 # Moveto Studio - Solutions IA Sectorielles
 
+> Visitez [Flowz.cc](https://flowz.cc/) pour découvrir notre plateforme d'action et d'automatisation.
+
+## Table des matières
+- [Vision et Stratégie](#-vision-et-stratégie)
+  - [Vision Technologique](#vision-technologique)
+  - [Écosystème Moveto](#-écosystème-moveto--passerellecc--flowzcc)
+  - [Vision Future : Agents IA Verticaux](#-vision-future--agents-ia-verticaux)
+  - [Solutions](#solutions)
+  - [Innovation](#innovation-)
+  - [Extensibilité](#extensibilité)
+- [Plateforme Passerelle.cc](#-plateforme-passerellecc)
+  - [Architecture](#architecture)
+  - [Composants Principaux](#composants-principaux)
+  - [Système RAG Dual](#-système-rag-dual)
+  - [Système de Double Bucket](#-système-de-double-bucket-pour-les-embeddings)
+- [Architecture Technique Détaillée](#-architecture-technique-détaillée)
+- [Partenariats](#-partenariats)
+
 ## 🎯 Vision et Stratégie
 
-Moveto est un studio de solutions IA sectorielles qui combine expertise technique et connaissance métier pour créer des plateformes intelligentes spécialisées. Notre approche unique permet de déployer rapidement des solutions verticales complètes pour différents secteurs d'activité.
+Je développe chez Moveto un studio de solutions IA sectorielles qui combine expertise technique et connaissance métier pour créer des plateformes intelligentes spécialisées. Mon approche unique permet de déployer rapidement des solutions verticales complètes pour différents secteurs d'activité.
 
 ### Vision Technologique
 ```mermaid
@@ -45,7 +63,7 @@ graph TB
 
 ### 🔄 Écosystème Moveto : Passerelle.cc & Flowz.cc
 
-L'écosystème Moveto s'articule autour de deux plateformes complémentaires qui forment un cycle complet d'intelligence et d'action :
+Mon écosystème s'articule autour de deux plateformes complémentaires qui forment un cycle complet d'intelligence et d'action :
 
 ```mermaid
 graph LR
@@ -93,6 +111,8 @@ graph LR
 - **CRM Intelligent** : Gestion et qualification des leads B2B
 - **Mise en action** des insights générés par Passerelle.cc
 
+> Découvrez [Flowz.cc](https://flowz.cc/) - Ma solution d'automatisation nouvelle génération
+
 #### Synergie et Intégration
 Cette approche intégrée permet de créer un cycle vertueux où :
 1. **Passerelle.cc analyse** les données sectorielles et documents utilisateurs
@@ -102,7 +122,7 @@ Cette approche intégrée permet de créer un cycle vertueux où :
 
 ### 🚀 Vision Future : Agents IA Verticaux
 
-Selon une [étude de Y Combinator](https://www.ycombinator.com/library/Lt-vertical-ai-agents-could-be-10x-bigger-than-saas), les agents IA verticaux pourraient représenter un marché 10 fois plus important que le SaaS traditionnel. Moveto s'inscrit pleinement dans cette vision avec une feuille de route ambitieuse :
+Selon une [étude de Y Combinator](https://www.ycombinator.com/library/Lt-vertical-ai-agents-could-be-10x-bigger-than-saas), les agents IA verticaux pourraient représenter un marché 10 fois plus important que le SaaS traditionnel. Je m'inscris pleinement dans cette vision avec une feuille de route ambitieuse :
 
 #### 1. Transformation en Système Multi-Agents Autonome
 - Agents spécialisés par tâche et secteur
@@ -123,14 +143,14 @@ Selon une [étude de Y Combinator](https://www.ycombinator.com/library/Lt-vertic
 - Génération de rapports et analyses prédictives
 
 #### 4. Expansion Verticale Multi-Sectorielle
-Après le secteur de la formation professionnelle, Moveto prévoit d'étendre son approche à d'autres verticaux :
+Après le secteur de la formation professionnelle, je prévois d'étendre mon approche à d'autres verticaux :
 - Santé et bien-être
 - Finance et assurance
 - Immobilier
 - Ressources humaines
 - Éducation supérieure
 
-Cette vision s'appuie sur notre architecture modulaire et notre expertise en RAG, permettant une adaptation rapide à de nouveaux secteurs tout en maintenant une base technologique commune.
+Cette vision s'appuie sur mon architecture modulaire et mon expertise en RAG, permettant une adaptation rapide à de nouveaux secteurs tout en maintenant une base technologique commune.
 
 ### Solutions
 1. **Licence Secteur**
@@ -198,7 +218,7 @@ tech_sector = SectorConfig(
 )
 ```
 
-Cette architecture permet de :
+Cette architecture me permet de :
 - Ajouter de nouvelles sources de données
 - Créer des agents spécialisés
 - Configurer des index dédiés
@@ -207,7 +227,7 @@ Cette architecture permet de :
 
 ## 📊 Plateforme Passerelle.cc
 
-Passerelle.cc est notre première implémentation verticale, spécialisée dans le secteur de la formation professionnelle.
+Passerelle.cc est ma première implémentation verticale, spécialisée dans le secteur de la formation professionnelle.
 
 ### Architecture
 
@@ -375,7 +395,7 @@ graph TB
 
 ### 🔄 Système RAG Dual
 
-Le système Passerelle.cc intègre une architecture RAG (Retrieval Augmented Generation) à deux niveaux :
+Mon système Passerelle.cc intègre une architecture RAG (Retrieval Augmented Generation) à deux niveaux :
 
 #### 1. RAG Global (Sectoriel)
 - Basé sur les données sectorielles indexées dans Meilisearch
@@ -405,7 +425,7 @@ Cette architecture permet une personnalisation poussée tout en maintenant une b
 
 ### 🔒 Système de Double Bucket pour les Embeddings
 
-Une innovation majeure de Passerelle.cc est son système de double bucket pour la gestion des embeddings, qui assure une utilisation optimale des ressources et une protection contre les limitations d'API.
+Une innovation majeure de ma plateforme est son système de double bucket pour la gestion des embeddings, qui assure une utilisation optimale des ressources et une protection contre les limitations d'API.
 
 ```mermaid
 graph TB
@@ -642,3 +662,22 @@ graph TB
     class DA,AA,REA,CPFA,INDM,CM,DPA primary
     class LC,AC llm
     class UD,DC,DPS userRag
+```
+
+## 🤝 Partenariats
+
+Je recherche activement des partenaires visionnaires pour co-créer l'avenir de l'IA sectorielle. Si vous souhaitez collaborer sur des projets innovants ou explorer des opportunités de partenariat, n'hésitez pas à me contacter.
+
+> [Découvrir les opportunités de partenariat](https://flowz.cc/careers)
+
+### Ce que j'offre à mes partenaires
+- Co-création de solutions IA innovantes
+- Expertise technique en RAG et agents IA
+- Accès à mon écosystème technologique
+- Développement de solutions verticales sur mesure
+
+---
+
+*Thibault Souris*  
+Fondateur de Moveto Studio  
+[Flowz.cc](https://flowz.cc/) | [LinkedIn](https://www.linkedin.com/in/thibaultsouris/)
