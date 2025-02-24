@@ -5,7 +5,7 @@
 ## Table des matières
 - [Vision et Stratégie](#-vision-et-stratégie)
   - [Vision Technologique](#vision-technologique)
-  - [Écosystème Moveto](#-écosystème-moveto--passerellecc--flowzcc)
+  - [Écosystème](#-écosystème-moveto--passerellecc--flowzcc)
   - [Vision Future : Agents IA Verticaux](#-vision-future--agents-ia-verticaux)
   - [Solutions](#solutions)
   - [Innovation](#innovation-)
@@ -63,7 +63,7 @@ graph TB
     PERSO --> FUTUR
 ```
 
-### 🔄 Écosystème Moveto : Passerelle.cc & Flowz.cc
+### 🔄 Écosystème : Passerelle.cc & Flowz.cc
 
 Mon écosystème s'articule autour de deux plateformes complémentaires qui forment un cycle complet d'intelligence et d'action :
 
