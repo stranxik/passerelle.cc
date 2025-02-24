@@ -35,6 +35,10 @@ graph TB
     %% External APIs
     CPF[CPF API]
     
+    %% User Document Vault
+    UserDocumentVault[(User Document<br/>Vault)]
+    DocumentChunks[(Document<br/>Chunks)]
+    
     %% Infrastructure Connections
     Frontend --> Coolify
     Coolify --> CloudflareTunnel
@@ -74,6 +78,17 @@ graph TB
     SearchAgent --> Redis
     LiveSearchAgent --> Redis
     CPFLiveSearchAgent --> Redis
+    
+    %% User Document RAG Flow
+    Supabase --> UserDocumentVault
+    DocumentProcessor --> UserDocumentVault
+    UserDocumentVault --> DocumentChunks
+    DocumentChunks --> AssistantAgent
+    AssistantAgent --> |User-specific RAG| UserDocumentVault
+    
+    %% Styling
+    classDef userRag fill:#9370DB,stroke:#9370DB,color:#fff
+    class UserDocumentVault,DocumentChunks userRag
 ```
 
 ## Composants
@@ -86,6 +101,8 @@ graph TB
 - **API Gateway** : Point d'entrée unique pour les requêtes
 - **Redis** : Cache pour les résultats de recherche
 - **Meilisearch** : Moteur de recherche vectorielle
+- **User Document Vault** : Stockage sécurisé des documents utilisateurs
+- **Document Chunks** : Fragments de documents vectorisés pour le RAG utilisateur
 
 ### Agents
 - **SearchOrchestrator** : Coordonne les différents agents
@@ -94,6 +111,14 @@ graph TB
 - **RefinementAgent** : Affine les recherches
 - **LiveSearchAgent** : Enrichit via France travail
 - **CPFLiveSearchAgent** : Enrichit via CPF
+- **DocumentProcessor** : Traite et indexe les documents utilisateurs pour le RAG personnalisé
+
+### Système RAG Dual
+Le système utilise désormais deux approches RAG complémentaires :
+1. **RAG Global** : Basé sur les données sectorielles indexées dans Meilisearch
+2. **RAG Utilisateur** : Basé sur les documents personnels de l'utilisateur stockés dans le Vault
+
+Cette architecture permet de combiner des réponses contextuelles générales avec des informations spécifiques à l'utilisateur, offrant une expérience hautement personnalisée tout en maintenant une base de connaissances commune.
 
 ## 🎯 Moveto Studio
 
@@ -251,6 +276,16 @@ graph TB
         end
     end
 
+    subgraph "User Document System"
+        SUP[(Supabase DB)]
+        DPA[Document Processor Agent]
+        subgraph "User Vault"
+            UD[User Documents]
+            DC[Document Chunks]
+            DPS[Document Processing Status]
+        end
+    end
+
     subgraph "Cache Layer"
         RE[(Redis)]
         CM[Cache Manager]
@@ -338,6 +373,18 @@ graph TB
     LC --> PROV
     PROV --> HA
     PDF --> SM
+    
+    %% User Document RAG Flow
+    FRONT --> SUP
+    SUP --> UD
+    API --> DPA
+    DPA --> UD
+    DPA --> DC
+    DPA --> DPS
+    UD --> DC
+    DC --> HA
+    DC --> CA
+    HA --> |User-specific RAG| DC
 
     %% Styles
     classDef primary fill:#2374ab,stroke:#2374ab,color:#fff
@@ -345,10 +392,117 @@ graph TB
     classDef storage fill:#57a773,stroke:#57a773,color:#fff
     classDef agent fill:#7d5ba6,stroke:#7d5ba6,color:#fff
     classDef llm fill:#ffa07a,stroke:#ffa07a,color:#fff
+    classDef userRag fill:#9370DB,stroke:#9370DB,color:#fff
     
     class FC,FT,CPF secondary
-    class ME,RE storage
+    class ME,RE,SUP storage
     class HA,FA,LSA agent
-    class DA,AA,REA,CPFA,INDM,CM primary
+    class DA,AA,REA,CPFA,INDM,CM,DPA primary
     class LC,AC llm
+    class UD,DC,DPS userRag
 ```
+
+## 🔄 Système RAG Dual
+
+Le système Passerelle.cc intègre désormais une architecture RAG (Retrieval Augmented Generation) à deux niveaux :
+
+### 1. RAG Global (Sectoriel)
+- Basé sur les données sectorielles indexées dans Meilisearch
+- Alimenté par les agents d'import (Data Import, Actualités, RetourEmploi, CPF)
+- Fournit une base de connaissances commune à tous les utilisateurs
+- Optimisé pour les requêtes générales sur le secteur de la formation
+
+### 2. RAG Utilisateur (Personnalisé)
+- Basé sur les documents personnels stockés dans le Vault utilisateur
+- Géré par le Document Processor Agent
+- Stockage sécurisé dans Supabase avec isolation par utilisateur
+- Permet des réponses contextualisées aux données spécifiques de l'utilisateur
+
+### Fonctionnement
+1. Les documents utilisateurs sont téléchargés via le frontend et stockés dans Supabase
+2. Le Document Processor Agent traite ces documents :
+   - Extraction du texte
+   - Chunking (découpage en fragments)
+   - Vectorisation
+   - Stockage des chunks dans la table document_chunks
+3. Lors d'une requête utilisateur, l'Assistant Agent :
+   - Interroge le RAG global pour les connaissances sectorielles
+   - Interroge simultanément le RAG utilisateur pour les informations personnalisées
+   - Fusionne les résultats pour une réponse complète et contextualisée
+
+Cette architecture permet une personnalisation poussée tout en maintenant une base de connaissances commune, offrant ainsi le meilleur des deux mondes aux utilisateurs.
+
+## 🔒 Système de Double Bucket pour les Embeddings
+
+Une innovation majeure de Passerelle.cc est son système de double bucket pour la gestion des embeddings, qui assure une utilisation optimale des ressources et une protection contre les limitations d'API.
+
+```mermaid
+graph TB
+    subgraph "Système de Double Bucket"
+        subgraph "BaseAgent Bucket"
+            RB[RedisTokenBucket]
+            RF[Redis Flow Control]
+            RP[Rate Protection]
+        end
+        
+        subgraph "IndexManager Bucket"
+            TB[TokenBucket]
+            EB[Embeddings Batch]
+            RL[Rate Limiting]
+        end
+        
+        RB <--> TB
+        RF --> EB
+        RP --> RL
+    end
+    
+    subgraph "Utilisations"
+        ME[(Meilisearch<br/>Embeddings)]
+        SUP[(Supabase<br/>Document Chunks)]
+        DPA[Document<br/>Processor]
+        IM[Index<br/>Manager]
+    end
+    
+    TB --> ME
+    RB --> SUP
+    DPA --> RB
+    IM --> TB
+    
+    %% Styles
+    classDef bucket fill:#4B0082,stroke:#4B0082,color:#fff
+    classDef component fill:#9370DB,stroke:#9370DB,color:#fff
+    
+    class RB,TB bucket
+    class RF,RP,EB,RL component
+```
+
+### Caractéristiques du Système
+
+1. **Double Couche de Protection**
+   - `RedisTokenBucket` dans `agent_base.py` : Gère le flux Redis et la synchronisation avec Meilisearch
+   - `TokenBucket` dans `index_manager.py` : Contrôle les appels d'API pour les embeddings
+
+2. **Synchronisation Intelligente**
+   - Les deux buckets communiquent pour coordonner les limites de débit
+   - Adaptation dynamique aux contraintes des deux systèmes
+   - Prévention des erreurs de rate limiting
+
+3. **Optimisation des Ressources**
+   - Calcul intelligent du nombre de tokens nécessaires
+   - Regroupement des requêtes en lots optimaux
+   - Attente adaptative basée sur la disponibilité des tokens
+
+4. **Métriques et Monitoring**
+   - Suivi en temps réel de l'utilisation des tokens
+   - Statistiques détaillées sur les temps d'attente
+   - Alertes en cas d'approche des limites
+
+### Avantages
+
+- **Fiabilité** : Prévention des erreurs de rate limiting des API externes
+- **Performance** : Utilisation optimale des ressources disponibles
+- **Économie** : Réduction des coûts liés aux API d'embeddings
+- **Scalabilité** : Adaptation automatique aux volumes de données
+- **Résilience** : Gestion gracieuse des pics de charge
+
+Ce système est utilisé à la fois pour les embeddings dans Meilisearch (RAG global) et pour les embeddings des documents utilisateurs dans Supabase (RAG utilisateur), garantissant une cohérence et une efficacité optimales dans toute l'architecture.
