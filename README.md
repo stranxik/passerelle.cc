@@ -418,7 +418,6 @@ graph TB
 
 ##### Agents Publics (Interface Utilisateur)
 - **AssistantAgent** : Agent principal d'interaction avec l'utilisateur, intègre le RAG dual
-- **AgentSantePublic** : Spécialisé dans le domaine de la santé publique
 - **PDFAgent** : Traitement et analyse des documents PDF
 - **BlogGeneratorAgent** : Génération de contenu pour les blogs
 
