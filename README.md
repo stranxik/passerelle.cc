@@ -1,6 +1,7 @@
-# Moveto Studio - Solutions IA Sectorielles
+# Solutions IA Sectorielles combinées [Flowz.cc & Passerelle.cc] 
 
-> Visitez [Flowz.cc](https://flowz.cc/) pour découvrir notre plateforme d'action et d'automatisation.
+> Visitez [Flowz.cc](https://flowz.cc/) pour découvrir et vous pré-inscrire à la plateforme d'action et d'automatisation. <br>
+> Accédez à [Passerelle.cc](#-passerellecc---analyses-stratégiques-pour-la-formation) pour découvrir le fonctionnement des futures plateformes d'analyse.
 
 ## Table des matières
 - [Vision et Stratégie](#-vision-et-stratégie)
