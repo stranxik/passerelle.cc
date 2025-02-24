@@ -22,7 +22,7 @@
 
 ## 🎯 Vision et Stratégie
 
-Je développe chez Moveto un studio de solutions IA sectorielles qui combine expertise technique et connaissance métier pour créer des plateformes intelligentes spécialisées. Mon approche unique permet de déployer rapidement des solutions verticales complètes pour différents secteurs d'activité.
+Je développe un studio de solutions IA sectorielles qui combine expertise technique et connaissance métier pour créer des plateformes intelligentes spécialisées. Mon approche unique permet de déployer rapidement des solutions verticales complètes pour différents secteurs d'activité.
 
 ### Vision Technologique
 ```mermaid
