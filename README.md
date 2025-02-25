@@ -624,7 +624,7 @@ Pour en savoir plus sur mon parcours, mes projets et mes compétences, consultez
 
 <div align="center">
   <a href="https://dub.sh/i3eMsFA" target="_blank">
-    <img src="https://img.shields.io/badge/CV_et_Projets-Thibault_Souris-0A66C2?style=for-the-badge&logo=notion&logoColor=white" alt="Carte Professionnelle" />
+    <img src="https://img.shields.io/badge/CV_et_Projets-Thibault_Souris-0A66C2?style=for-the-badge" alt="Carte Professionnelle" />
   </a>
 </div>
 
