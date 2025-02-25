@@ -1,4 +1,4 @@
-# Solutions IA Sectorielles combinées [Flowz.cc & Passerelle.cc] 
+# [Flowz.cc & Passerelle.cc] - Solutions IA Sectorielles combinées 
 
 > Visitez [Flowz.cc](https://flowz.cc/) pour découvrir et vous pré-inscrire à la plateforme d'action et d'automatisation. <br>
 > Accédez à [Passerelle.cc](#-passerellecc---analyses-stratégiques-pour-la-formation) pour découvrir le fonctionnement des futures plateformes d'analyse.
@@ -147,11 +147,9 @@ Selon une [étude de Y Combinator](https://www.ycombinator.com/library/Lt-vertic
 
 #### 4. Expansion Verticale Multi-Sectorielle
 Après le secteur de la formation professionnelle, je prévois d'étendre mon approche à d'autres verticaux :
-- Santé et bien-être
 - Finance et assurance
 - Immobilier
 - Ressources humaines
-- Éducation supérieure
 
 Cette vision s'appuie sur mon architecture modulaire et mon expertise en RAG, permettant une adaptation rapide à de nouveaux secteurs tout en maintenant une base technologique commune.
 
