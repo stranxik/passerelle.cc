@@ -182,42 +182,7 @@ Cette vision s'appuie sur mon architecture modulaire et mon expertise en RAG, pe
 
 ### Extensibilité 
 
-Le système est conçu pour être facilement étendu à de nouveaux secteurs :
-
-```python
-# Exemple d'extension à un nouveau secteur
-class SectorConfig:
-    def __init__(self, name: str, sources: List[Source], agents: List[Agent]):
-        self.name = name
-        self.sources = sources  # Sources de données spécifiques au secteur
-        self.agents = agents    # Agents spécialisés
-        self.indexes = []       # Index Meilisearch dédiés
-
-    async def initialize(self):
-        # Configuration automatique des index
-        for source in self.sources:
-            index_config = await IndexManager.create_index_config(source)
-            self.indexes.append(index_config)
-        
-        # Déploiement des agents
-        for agent in self.agents:
-            await agent.deploy()
-
-# Utilisation
-tech_sector = SectorConfig(
-    name="Formation Tech",
-    sources=[
-        GitHubTrendsSource(),
-        StackOverflowSource(),
-        TechCertificationsSource()
-    ],
-    agents=[
-        TechCareerAgent(),
-        SkillsAnalysisAgent(),
-        LearningPathAgent()
-    ]
-)
-```
+Le système est conçu pour être facilement étendu à de nouveaux secteurs 
 
 Cette architecture me permet de :
 - Ajouter de nouvelles sources de données
